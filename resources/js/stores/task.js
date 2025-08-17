@@ -37,6 +37,7 @@ export const useTaskStore = defineStore('tasks', {
       }else{
         const created = await res.json()
         this.taskList.push(created)
+        this.fetchTasks()
       }
       } catch (err){
         this.error = err.message
